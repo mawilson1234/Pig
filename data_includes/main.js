@@ -138,15 +138,9 @@ var practice_no_feedback_trial = label => item => {
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence},
-        'QuestionAlt', {
-            q: item.question,
-            as: [['f', item.left_answer], ['j', item.right_answer]],
-            hasCorrect: item.left_answer == item.correct_answer ? 0 : 1
-        },
         'Separator', {
             transfer: 1000, 
-            normalMessage: '+', 
-            ignoreFailure: true
+            normalMessage: '+'
         },
         'PennController', PennController()
             .log('item',          item.item)
