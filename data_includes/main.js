@@ -242,8 +242,8 @@ var feedback_trial = label => item => {
     ]
 }
 
-Template('practice-1.csv', practice_no_feedback_trial('no_feedback_practice'))
-Template('practice-2.csv', feedback_trial('feedback_practice'))
+Template('practice_1.csv', practice_no_feedback_trial('no_feedback_practice'))
+Template('practice_2.csv', feedback_trial('feedback_practice'))
 
 newTrial('post_practice',
     newText('post-pr', 'That\'s it for practice! Click below when you\'re ready to begin the experiment.')
@@ -271,8 +271,8 @@ newTrial('break',
 Template('experiencer.csv', no_feedback_trial('experiencer'))
 
 Template('hagf.csv', feedback_trial('hagf'))
-Template('fillers-nonpres.csv', feedback_trial('fillers_nonpresentational'))
-Template('fillers-pres.csv', feedback_trial('fillers_presentational'))
+Template('fillers_nonpres.csv', feedback_trial('fillers_nonpresentational'))
+Template('fillers_pres.csv', feedback_trial('fillers_presentational'))
 Template('dative.csv', feedback_trial('dative'))
 
 
