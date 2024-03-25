@@ -296,6 +296,7 @@ newTrial('feedback',
     
     newTextInput('feedback_sentences')
         .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
         .log()
         .lines(10)
         .print()
@@ -310,6 +311,7 @@ newTrial('feedback',
     
     newTextInput('feedback_hard_to_understand_sentences')
         .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
         .log()
         .lines(10)
         .print()
@@ -325,7 +327,7 @@ newTrial('feedback',
     ,
     
     newTextInput('feedback_strategies_sentences')
-        .cssContainer('text-align', 'center')
+        .center()
         .log()
         .lines(10)
         .print()
@@ -340,7 +342,7 @@ newTrial('feedback',
     ,
     
     newTextInput('feedback_difficulties')
-        .cssContainer('text-align', 'center')
+        .center()
         .log()
         .lines(10)
         .print()
@@ -358,7 +360,7 @@ newTrial('feedback',
     ,
     
     newTextInput('feedback_bot')
-        .cssContainer('text-align', 'center')
+        .center()
         .log()
         .lines(10)
         .print()
