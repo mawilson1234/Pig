@@ -38,16 +38,16 @@ function sepWithN(sep, main, n) { return new SepWithN(sep, main, n); }
 SetCounter('setcounter')
 
 Sequence(
-    'setcounter', 
-    'consent', 
-    'instructions_1', 
-    'instructions_2', 
-    'instructions_3',
-    'no_feedback_practice',
+    // 'setcounter', 
+    // 'consent', 
+    // 'instructions_1', 
+    // 'instructions_2', 
+    // 'instructions_3',
+    // 'no_feedback_practice',
     randomize('feedback_practice'), 
-    'post_practice',
-    sepWithN(
-        'break', 
+    // 'post_practice',
+    // sepWithN(
+    //     'break', 
         rshuffle(
             'experiencer', 
             'hagf', 
@@ -55,8 +55,8 @@ Sequence(
             'fillers_presentational', 
             'dative'
         ), 
-        30
-    ),
+    //     30
+    // ),
     'feedback', 
     SendResults(), 
     'bye'
@@ -142,10 +142,10 @@ newTrial('instructions_3',
 var practice_no_feedback_trial = label => item => {
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'Separator', {
-            transfer: 1000, 
+            transfer: 0, 
             normalMessage: '+'
         },
         'PennController', PennController()
@@ -158,7 +158,7 @@ var practice_no_feedback_trial = label => item => {
 var no_feedback_trial = label => item => {
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -168,7 +168,7 @@ var no_feedback_trial = label => item => {
             hasCorrect: item.left_answer == item.correct_answer ? 0 : 1
         },
         'Separator', {
-            transfer: 1000, 
+            transfer: 0, 
             normalMessage: '+', 
             ignoreFailure: true
         },
@@ -211,7 +211,7 @@ var feedback_trial = label => item => {
     
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -221,7 +221,7 @@ var feedback_trial = label => item => {
             hasCorrect: item.correct_answer === 'False' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
         },
         'Separator', {
-            transfer: 1000, 
+            transfer: 0, 
             normalMessage: '+', 
             errorMessage: 'Wrong answer. Please read slowly and carefully.'
         },
