@@ -381,9 +381,11 @@ newTrial('feedback',
             'Other OS laptop or desktop', 
             'Other device'
         )
-        .center()
+        .css(centered_justified_style)
         .print()
     ,
+    
+    newText("<p />").center().print(),
     
     newButton('Next','Next')
         .center()
