@@ -137,7 +137,7 @@ var practice_no_feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'Separator', {
             transfer: 1000, 
             normalMessage: '+'
@@ -153,7 +153,7 @@ var no_feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
@@ -204,7 +204,7 @@ var feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
