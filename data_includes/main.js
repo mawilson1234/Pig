@@ -49,7 +49,7 @@ Sequence(
     sepWithN(
         'break', 
         rshuffle('experiencer', 'hagf', 'fillers_nonpresentational', 'fillers_presentational', 'dative'), 
-        49
+        30
     ),
     'feedback', 
     SendResults(), 
