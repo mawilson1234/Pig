@@ -38,12 +38,12 @@ function sepWithN(sep, main, n) { return new SepWithN(sep, main, n); }
 SetCounter('setcounter')
 
 Sequence(
-    'setcounter', 
-    'consent', 
-    'instructions_1', 
-    'instructions_2', 
-    'instructions_3',
-    'no_feedback_practice',
+    // 'setcounter', 
+    // 'consent', 
+    // 'instructions_1', 
+    // 'instructions_2', 
+    // 'instructions_3',
+    // 'no_feedback_practice',
     randomize('feedback_practice'), 
     'post_practice',
     sepWithN(
