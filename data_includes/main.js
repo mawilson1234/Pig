@@ -10,21 +10,6 @@ var centered_justified_style = {
     width: '30em'
 }
 
-var defaults = [
-    'QuestionAlt', {
-        randomOrder: false,
-        presentHorizontally: true
-    },
-    'EPDashedSentence', {
-        mode: 'self-paced reading',
-        display: 'in place'
-    },
-    'Separator', {
-        transfer: 1000,
-        normalMessage: '+'
-    }
-]
-
 function SepWithN(sep, main, n) {
     this.args = [sep,main];
 
@@ -151,9 +136,12 @@ newTrial('instructions_3',
 var practice_no_feedback_trial = label => item => {
     return [
         label,
-        'Separator',
-        'EPDashedSentence', {s: item.sentence},
-        'Separator',
+        'Separator', {transfer: 1000, normalMessage: '+'},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
+        'Separator', {
+            transfer: 1000, 
+            normalMessage: '+'
+        },
         'PennController', PennController()
             .log('item',          item.item)
             .log('sentence',      item.sentence)
@@ -164,14 +152,18 @@ var practice_no_feedback_trial = label => item => {
 var no_feedback_trial = label => item => {
     return [
         label,
-        'Separator',
-        'EPDashedSentence', {s: item.sentence},
+        'Separator', {transfer: 1000, normalMessage: '+'},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
+            randomOrder: false,
+            presentHorizontally: true,
             hasCorrect: item.left_answer == item.correct_answer ? 0 : 1
         },
         'Separator', {
+            transfer: 1000, 
+            normalMessage: '+', 
             ignoreFailure: true
         },
         'PennController', PennController()
@@ -213,14 +205,18 @@ var feedback_trial = label => item => {
     
     return [
         label,
-        'Separator',
-        'EPDashedSentence', {s: item.sentence},
+        'Separator', {transfer: 1000, normalMessage: '+'},
+        'EPDashedSentence', {s: item.sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
+            randomOrder: false,
+            presentHorizontally: true,
             hasCorrect: item.correct_answer === 'False' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
         },
-        'Separator', { 
+        'Separator', {
+            transfer: 1000, 
+            normalMessage: '+', 
             errorMessage: 'Wrong answer. Please read slowly and carefully.'
         },
         'PennController', PennController()
