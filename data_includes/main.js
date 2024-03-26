@@ -38,16 +38,16 @@ function sepWithN(sep, main, n) { return new SepWithN(sep, main, n); }
 SetCounter('setcounter')
 
 Sequence(
-    // 'setcounter', 
-    // 'consent', 
-    // 'instructions_1', 
-    // 'instructions_2', 
-    // 'instructions_3',
-    // 'no_feedback_practice',
+    'setcounter', 
+    'consent', 
+    'instructions_1', 
+    'instructions_2', 
+    'instructions_3',
+    'no_feedback_practice',
     randomize('feedback_practice'), 
-    // 'post_practice',
-    // sepWithN(
-    //     'break', 
+    'post_practice',
+    sepWithN(
+        'break', 
         rshuffle(
             'experiencer', 
             'hagf', 
@@ -55,8 +55,8 @@ Sequence(
             'fillers_presentational', 
             'dative'
         ), 
-    //     30
-    // ),
+        30
+    ),
     'feedback', 
     SendResults(), 
     'bye'
@@ -65,9 +65,11 @@ Sequence(
 newTrial("consent",
     newText(
         "Before starting the experiment, you will need to give consent. " + 
-        "Please click <a href='https://campuspress.yale.edu/michaelwilson/files/2022/09/consent.pdf' target='_blank'>here</a> to download the consent form for this study. " +
-        "If you read it and agree to participate in this study, click 'I Agree' below. " + 
-        "If you do not agree to participate in this study, you can leave this page by closing the tab or window."
+        "Please click <a href='https://campuspress.yale.edu/michaelwilson/files/2022/09/consent.pdf' " +
+        "target='_blank'>here</a> to download the consent form for this " + 
+        "study. If you read it and agree to participate in this study, " +
+        "click 'I Agree' below. If you do not agree to participate in " +
+        "this study, you can leave this page by closing the tab or window."
     )
         .css(centered_justified_style)
         .print()
@@ -79,10 +81,10 @@ newTrial("consent",
         .wait()
 ).setOption("countsForProgressBar", false)
 
-newTrial('instructions_1',
-    newHtml('instructions_1', 'instructions_1.html')
+var instructions = label => newTrial(label,
+    newHtml(label, label + '.html')
         .css(centered_justified_style)
-        .radioWarning('You must select an option for \'%name%\'.')
+        .radioWarning("You must select an option for '%name%'.")
         .print()
         .log()
     ,
@@ -91,53 +93,17 @@ newTrial('instructions_1',
         .center()
         .print()
         .wait(
-            getHtml('instructions_1')
+            getHtml(label)
                 .test.complete()
                 .failure(
-                    getHtml('instructions_1').warn()
+                    getHtml(label).warn()
                 )
         )
 )
 
-newTrial('instructions_2',
-    newHtml('instructions_2', 'instructions_2.html')
-        .css(centered_justified_style)
-        .radioWarning('You must select an option for \'%name%\'.')
-        .print()
-        .log()
-    ,
-    
-    newButton('Next', 'Next')
-        .center()
-        .print()
-        .wait(
-            getHtml('instructions_2')
-                .test.complete()
-                .failure(
-                    getHtml('instructions_2').warn()
-                )
-        )
-)
-
-newTrial('instructions_3',
-    newHtml('instructions_3', 'instructions_3.html')
-        .css(centered_justified_style)
-        .radioWarning('You must select an option for \'%name%\'.')
-        .print()
-        .log()
-    ,
-    
-    newButton('Next', 'Next')
-        .center()
-        .print()
-        .wait(
-            getHtml('instructions_3')
-                .test.complete()
-                .failure(
-                    getHtml('instructions_3').warn()
-                )
-        )
-)
+instructions('instructions_1')
+instructions('instructions_2')
+instructions('instructions_3')
 
 var practice_no_feedback_trial = label => item => {
     return [
@@ -156,10 +122,19 @@ var practice_no_feedback_trial = label => item => {
 }
 
 var no_feedback_trial = label => item => {
+    var sentence = item.sentence.split(' ')
+    var s_array = []
+    for (var word of sentence) {
+        word = word.replace('&nbsp;', ' ')
+        s_array.push(word)
+    }
+    sentence = s_array
+    log_sentence = sentence.join(' ')
+    
     return [
         label,
         'Separator', {transfer: 0, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence, display: 'in place'},
+        'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
@@ -175,7 +150,7 @@ var no_feedback_trial = label => item => {
         'PennController', PennController()
             .log('group',            item.group)
             .log('item',             item.item)
-            .log('sentence',         item.sentence)
+            .log('sentence',         item.log_sentence)
             .log('question',         item.question)
             .log('left_answer',      item.left_answer)
             .log('right_answer',     item.right_answer)
@@ -209,10 +184,19 @@ var feedback_trial = label => item => {
         d[key] = key in item ? item[key] : 'NA'
     }
     
+    var sentence = item.sentence.split(' ')
+    var s_array = []
+    for (var word of sentence) {
+        word = word.replace('&nbsp;', ' ')
+        s_array.push(word)
+    }
+    sentence = s_array
+    log_sentence = sentence.join(' ')
+    
     return [
         label,
         'Separator', {transfer: 0, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence, display: 'in place'},
+        'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
@@ -228,7 +212,7 @@ var feedback_trial = label => item => {
         'PennController', PennController()
             .log('group',          d.group)
             .log('item',           item.item)
-            .log('sentence',       item.sentence)
+            .log('sentence',       item.log_sentence)
             .log('question',       item.question)
             .log('left_answer',    item.left_answer)
             .log('right_answer',   item.right_answer)
@@ -246,7 +230,10 @@ Template('practice_1.csv', practice_no_feedback_trial('no_feedback_practice'))
 Template('practice_2.csv', feedback_trial('feedback_practice'))
 
 newTrial('post_practice',
-    newText('post-pr', 'That\'s it for practice! Click below when you\'re ready to begin the experiment.')
+    newText(
+        "That's it for practice! Click below when you're " +
+        'ready to begin the experiment.'
+    )
         .css(centered_justified_style)
         .print()
     ,
@@ -258,10 +245,14 @@ newTrial('post_practice',
 )
 
 newTrial('break',
-    newText('You may now take a short break. Click below when you are ready to return to the experiment.')
+    newText(
+        'You may now take a short break. Click below when ' +
+        'you are ready to return to the experiment.'
+    )
         .css(centered_justified_style)
         .print()
     ,
+    
     newButton('click', 'Click here to return to the experiment')
         .center()
         .print()
