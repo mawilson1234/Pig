@@ -10,6 +10,13 @@ var centered_justified_style = {
     width: '30em'
 }
 
+var feedback_style = {
+    "text-align": "justify", 
+    margin: '0 auto', 
+    'margin-bottom': '1em',
+    width: '30em'
+}
+
 function SepWithN(sep, main, n) {
     this.args = [sep,main];
 
@@ -65,7 +72,7 @@ Sequence(
 newTrial("consent",
     newText(
         "Before starting the experiment, you will need to give consent. " + 
-        "Please click <a href='https://campuspress.yale.edu/michaelwilson/files/2022/09/consent.pdf' " +
+        "Please click <a href='' " +
         "target='_blank'>here</a> to download the consent form for this " + 
         "study. If you read it and agree to participate in this study, " +
         "click 'I Agree' below. If you do not agree to participate in " +
@@ -269,11 +276,11 @@ Template('dative.csv', feedback_trial('dative'))
 
 newTrial('feedback',
     newText(
-            'That\'s it for the experiment! We have just a few ' +
+            "That's it for the experiment! We have just a few " +
             'follow-up questions that will help us interpret ' +
             'your responses.'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
@@ -281,7 +288,7 @@ newTrial('feedback',
         'What, if anything, stood out to you about the sentences ' +
         'that you saw?'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
@@ -296,7 +303,7 @@ newTrial('feedback',
     newText(
         'Did anything make the sentences hard to understand?'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
@@ -313,12 +320,13 @@ newTrial('feedback',
         'while reading, or do you think anything about your reading ' +
         'changed during the experiment?'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
     newTextInput('feedback_strategies_sentences')
-        .center()
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
         .log()
         .lines(10)
         .print()
@@ -328,12 +336,13 @@ newTrial('feedback',
         'Did you experience any difficulties (technical or otherwise) ' +
         'in doing the experiment?'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
     newTextInput('feedback_difficulties')
-        .center()
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
         .log()
         .lines(10)
         .print()
@@ -346,12 +355,13 @@ newTrial('feedback',
         'the most boring thing and the most interesting thing you ' +
         'would see along the way.'
     )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
     newTextInput('feedback_bot')
-        .center()
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
         .log()
         .lines(10)
         .print()
@@ -359,7 +369,7 @@ newTrial('feedback',
     
     
     newText('What device/OS did you use to complete the experiment?')
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
@@ -372,7 +382,7 @@ newTrial('feedback',
             'Other OS laptop or desktop', 
             'Other device'
         )
-        .css(centered_justified_style)
+        .css(feedback_style)
         .print()
     ,
     
