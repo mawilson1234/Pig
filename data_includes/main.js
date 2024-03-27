@@ -206,7 +206,7 @@ var feedback_trial = label => item => {
             as: [['f', item.left_answer], ['j', item.right_answer]],
             randomOrder: false,
             presentHorizontally: true,
-            hasCorrect: item.correct_answer === 'False' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
+            hasCorrect: item.correct_answer === '' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
         },
         'Separator', {
             transfer: 1000, 
