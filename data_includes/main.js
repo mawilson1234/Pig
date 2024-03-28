@@ -357,7 +357,6 @@ newTrial('feedback',
     ,
     
     newTextInput('feedback_bot')
-        .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
         .lines(10)
