@@ -115,9 +115,9 @@ instructions('instructions_3')
 var practice_no_feedback_trial = label => item => {
     return [
         label,
-        'Separator', {transfer: 0, normalMessage: '+'},
+        'Separator', {transfer: 1000, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence, display: 'in place'},
-        'Separator', {transfer: 0, normalMessage: '+'},
+        'Separator', {transfer: 1000, normalMessage: '+'},
         'PennController', PennController()
             .log('group',         'practice')
             .log('subexperiment', label)
@@ -138,7 +138,7 @@ var no_feedback_trial = label => item => {
     
     return [
         label,
-        'Separator', {transfer: 0, normalMessage: '+'},
+        'Separator', {transfer: 1000, normalMessage: '+'},
         'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -148,7 +148,7 @@ var no_feedback_trial = label => item => {
             hasCorrect: item.left_answer == item.correct_answer ? 0 : 1
         },
         'Separator', {
-            transfer: 0, 
+            transfer: 1000, 
             normalMessage: '+', 
             ignoreFailure: true
         },
@@ -200,7 +200,7 @@ var feedback_trial = label => item => {
     
     return [
         label,
-        'Separator', {transfer: 0, normalMessage: '+'},
+        'Separator', {transfer: 1000, normalMessage: '+'},
         'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -210,7 +210,7 @@ var feedback_trial = label => item => {
             hasCorrect: item.correct_answer === '' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
         },
         'Separator', {
-            transfer: 0, 
+            transfer: 1000, 
             normalMessage: '+', 
             errorMessage: 'Wrong answer. Please read slowly and carefully.'
         },
