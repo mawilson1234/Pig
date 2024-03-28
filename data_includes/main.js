@@ -1,7 +1,7 @@
 PennController.ResetPrefix(null) // Shorten command names (keep this line here)
 DebugOff()
 
-//var counterOverride = 0
+var counterOverride = 0
 
 var centered_justified_style = {
     "text-align": "justify", 
@@ -115,13 +115,14 @@ instructions('instructions_3')
 var practice_no_feedback_trial = label => item => {
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: item.sentence, display: 'in place'},
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'PennController', PennController()
+            .log('group',         'practice')
+            .log('subexperiment', label)
             .log('item',          item.item)
             .log('sentence',      item.sentence)
-            .log('subexperiment', label)
     ]
 }
 
@@ -137,7 +138,7 @@ var no_feedback_trial = label => item => {
     
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -147,12 +148,13 @@ var no_feedback_trial = label => item => {
             hasCorrect: item.left_answer == item.correct_answer ? 0 : 1
         },
         'Separator', {
-            transfer: 1000, 
+            transfer: 0, 
             normalMessage: '+', 
             ignoreFailure: true
         },
         'PennController', PennController()
             .log('group',            item.group)
+            .log('subexperiment',    label)
             .log('item',             item.item)
             .log('sentence',         log_sentence)
             .log('question',         item.question)
@@ -166,7 +168,6 @@ var no_feedback_trial = label => item => {
             .log('s_voice_log_odds', item.s_voice_log_odds)
             .log('q_voice_log_odds', item.q_voice_log_odds)
             .log('se_log_odds',      item.se_log_odds)
-            .log('subexperiment',    label)
     ]
 }
 
@@ -184,7 +185,7 @@ var feedback_trial = label => item => {
     ]
     
     var d = {}
-    for (var key in check_keys) {
+    for (var key of check_keys) {
         d[key] = key in item ? item[key] : 'NA'
     }
     
@@ -199,7 +200,7 @@ var feedback_trial = label => item => {
     
     return [
         label,
-        'Separator', {transfer: 1000, normalMessage: '+'},
+        'Separator', {transfer: 0, normalMessage: '+'},
         'EPDashedSentence', {s: sentence, display: 'in place'},
         'QuestionAlt', {
             q: item.question,
@@ -209,12 +210,13 @@ var feedback_trial = label => item => {
             hasCorrect: item.correct_answer === '' ? false : (item.left_answer == item.correct_answer ? 0 : 1)
         },
         'Separator', {
-            transfer: 1000, 
+            transfer: 0, 
             normalMessage: '+', 
             errorMessage: 'Wrong answer. Please read slowly and carefully.'
         },
         'PennController', PennController()
             .log('group',          d.group)
+            .log('subexperiment',  label)
             .log('item',           item.item)
             .log('sentence',       log_sentence)
             .log('question',       item.question)
@@ -222,11 +224,10 @@ var feedback_trial = label => item => {
             .log('right_answer',   item.right_answer)
             .log('correct_answer', item.correct_answer)
             .log('structure',      d.structure)
+            .log('complementizer', d.complementizer)
+            .log('verb_type',      d.verb_type)
             .log('verb',           d.verb)
             .log('indirect_object_animacy', d.indirect_object_animacy)
-            .log('verb_type',      d.verb_type)
-            .log('complementizer', d.complementizer)
-            .log('subexperiment',  label)
     ]
 }
 
@@ -269,7 +270,6 @@ Template('hagf.csv', feedback_trial('hagf'))
 Template('fillers_nonpres.csv', feedback_trial('fillers_nonpresentational'))
 Template('fillers_pres.csv', feedback_trial('fillers_presentational'))
 Template('dative.csv', feedback_trial('dative'))
-
 
 newTrial('feedback',
     newText(
