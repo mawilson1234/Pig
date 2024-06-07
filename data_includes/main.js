@@ -116,7 +116,14 @@ var practice_no_feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: item.sentence, display: 'in place'},
+        'EPDashedSentence', {
+            s: item.sentence, 
+            mode: 'speeded acceptability',
+            display: 'in place',
+            blankText: '+',
+            wordTime: 325,
+            wordPauseTime: 0
+        },
         'Separator', {transfer: 1000, normalMessage: '+'},
         'PennController', PennController()
             .log('group',         'practice')
@@ -139,7 +146,14 @@ var no_feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: sentence, display: 'in place'},
+        'EPDashedSentence', {
+            s: sentence, 
+            mode: 'speeded acceptability',
+            display: 'in place',
+            blankText: '+',
+            wordTime: 325,
+            wordPauseTime: 0
+        },
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
@@ -201,7 +215,14 @@ var feedback_trial = label => item => {
     return [
         label,
         'Separator', {transfer: 1000, normalMessage: '+'},
-        'EPDashedSentence', {s: sentence, display: 'in place'},
+        'EPDashedSentence', {
+            s: sentence, 
+            mode: 'speeded acceptability',
+            display: 'in place',
+            blankText: '+',
+            wordTime: 325,
+            wordPauseTime: 0
+        },
         'QuestionAlt', {
             q: item.question,
             as: [['f', item.left_answer], ['j', item.right_answer]],
