@@ -14,14 +14,47 @@
 				<input name="Age" class="obligatory" rows="1" type="number" minlength="1" min="1" max="120" maxlength="3"></input>
 			</td>
 		</tr>
-		<td>How will a sentence be presented?</td>
 		<tr>
-			<br>
-			<br>
-			<input name="How will a sentence be presented?" type="radio" value="allatonce" class="obligatory" id="allatonce" />
-			<label for="allatonce">All at once</label>
-			<br>
-			<input name="How will a sentence be presented?" type="radio" value="wordbyword" class="obligatory" id="wordbyword" /><label for="wordbyword">Word by word</label>
+			<td width="50%">What is your first language (i.e., the language or languages you learned first)?</td>
+			<td>
+				<textarea name="demographics_firstlanguage" class="obligatory" rows="3" type="text"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">Where (country, state) did you live when you were 2&ndash;5 years of age?</td>
+			<td>
+				<textarea name="demographics_earlylifelocation" rows="3" class="obligatory" type="text"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">Where (country, state) did you attend Elementary/Junior high school?</td>
+			<td>
+				<textarea name="demographics_schoollocation" rows="3" class="obligatory" type="text"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">Do you speak any other languages/dialects? If so, please list them here, along with your level of proficiency in each.</td>
+			<td>
+				<textarea name="demographics_otherlanguages" rows="5" type="text"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">Please select the option that best describes your vision.</td>
+			<td width="50%">
+				<select name="demographics_vision" id="demographics_vision" class="obligatory">
+					<option selected="selected" select disabled>Select an option</option>
+					<option value="normal">Normal</option>
+					<option value="normal_glasses_wearing">Normal with glasses/contacts you are currently wearing</option>
+					<option value="normal_glasses_notwearing">Normal with glasses/contacts you are not wearing</option>
+					<option value="notnormal">Not normal nor corrected to normal</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td width="50%">Do you now or have you ever suffered from or been treated for a language or reading disorder? If so, please specify. If not, please enter "no".</td>
+			<td>
+				<textarea name="demographics_languagedisorder" rows="6" type="text" class="obligatory"></textarea>
+			</td>
 		</tr>
 	</tbody>
 </table>
