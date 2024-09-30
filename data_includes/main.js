@@ -116,7 +116,7 @@ newTrial("background",
     ,
     
     newText(
-        'Where (country, state) did you live when you were 2&endash;5 years of age?'
+        'Where (country, state) did you live when you were 2&ndash;5 years of age?'
     )
         .css(feedback_style)
         .print()
