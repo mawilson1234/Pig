@@ -1,0 +1,131 @@
+<div style="width:40em;">
+  <title>Demographic Questionnaire</title>
+  
+ <style type="text/css">
+    table{
+      font-style: italic;
+      border-collapse:separate;
+      border-spacing: 0 10px;
+    }
+    h4{
+      text-align: justify;
+      font-style: normal;
+    }
+    textarea{
+      width:100%;
+    }
+    select{
+      width: 100%;
+      min-width: 100%;
+    }
+    #smallselect{
+      display:table-cell;
+      width:44%;
+    }
+  </style>
+
+
+  <h4>Please complete this short demographic questionnaire
+  before beginning the experiment. Please answer the questions
+  accurately, as they will help in interpreting the results of the experiment.</h4>
+
+  <table>
+    <tbody>
+      <tr>
+        <td width="50%">What is your gender?</td>
+        <td>
+          <textarea name="Gender" class="obligatory" rows="1"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">How old are you?</td>
+        <td> 
+          <textarea name="Age" class = "obligatory" rows = "1"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Are you currently enrolled in LING 411: Introduction to Language Acquisition?</td>
+        <td>  
+          <input name = "411" type="radio" class="obligatory" value = "y" id = "y" />
+          <label for="y">Yes</label>
+          <input name = "411" type = "radio" class="obligatory" value = "n" id = "n" />
+          <label for = "n">No</label>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Have you participated in the study "Language Comprehension Study" in the Linguistics Department eye-tracking lab either this semester or last semester?</td>
+        <td>
+          <input name = "PrevStudy" type = "radio" class = "obligatory" value = "y" id = "y" />
+          <label for = "y">Yes</label>
+          <input name = "PrevStudy" type = "radio" class="obligatory" value= "n" id = "n" />
+          <label for = "n">No</label>
+          <input name = "PrevStudy" type = "radio" class="obligatory" value = "dr" id = "dr" />
+          <label for ="dr">Don't remember</label>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">What is your ethnicity? Check all that apply.</td>
+        <td width="50%">  
+          <input name = "ethnicity-amind" type = "checkbox" value = "amind"> American Indian/Alaska Native
+          <br>
+          <input name = "ethnicity-arab" type = "checkbox" value = "arab"> Arab
+          <br>
+          <input name = "ethnicity-asian" type = "checkbox" value = "asian"> Asian or Pacific Islander
+          <br>
+          <input name = "ethnicity-black" type = "checkbox" value = "black"> Black, not of Hispanic origin
+          <br>
+          <input name = "ethnicity-multi" type = "checkbox" value = "multi"> Multi-racial
+          <br>
+          <input name = "ethnicity-hispanic" type = "checkbox" value = "hispanic"> Hispanic
+          <br>
+          <input name = "ethnicity-white" type = "checkbox" value = "white"> White, not of Hispanic origin
+          <br>
+          <input name = "ethnicity-other-box" type = "checkbox" value = "other"> Another ethnicity (please specify):<textarea name = "ethnicity-other-text" rows = "1"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">What is your first language (i.e., the language or languages you learned first)?</td>
+        <td>
+          <textarea name = "firstlanguage" class = "obligatory" rows = "2"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Where (country, state) did you live when you were 2&ndash;5 years of age?</td>
+        <td>
+          <textarea name="countrystate25" rows = "2"></textarea>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td width="50%">Where (country, state) did you attend Elementary/Junior high school?</td>
+        <td>
+          <textarea name="countrystateSchool" rows = "2"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Do you speak any other languages/dialects? If so, please list them here, along with your level of proficiency in each.</td>
+        <td>
+          <textarea name="OtherLanguages" rows="3"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Is your vision:</td>
+        <td>
+            <input name = "vision" type = "radio" value = "Normal"> Normal<br>
+            <input name = "vision" type = "radio" value = "GlassesContacts"> Normal with glasses/contacts you are currently wearing<br>
+            <input name = "vision" type = "radio" value = "notwearing"> Normal with glasses/contacts you are not wearing<br>
+            <input name = "vision" type = "radio" value = "uncorrected"> Not normal or corrected to normal<br>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">Do you now or have you ever suffered from or been treated for a language or reading disorder?</td>
+        <td>
+            <input name = "disorder" type = "radio" class="obligatory" value = "y"> Yes (please specify): <textarea name = "whatdisorder" rows = "1" id = "smallselect"></textarea>
+            <br>
+            <input name = "disorder" type = "radio" class="obligatory" value = "n"> No
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

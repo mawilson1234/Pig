@@ -47,6 +47,7 @@ SetCounter('setcounter')
 Sequence(
     'setcounter', 
     'consent', 
+    'background', 
     'instructions_1', 
     'instructions_2', 
     'instructions_3',
@@ -86,6 +87,16 @@ newTrial("consent",
         .center()
         .print()
         .wait()
+).setOption("countsForProgressBar", false)
+
+newTrial("background",
+    newHtml("background", "background.html")
+        .print()
+    ,
+    newButton("Continue")
+        .print()
+        .wait()
+
 ).setOption("countsForProgressBar", false)
 
 var instructions = label => newTrial(label,
@@ -428,10 +439,11 @@ newTrial('bye',
     newText(
         'Thank you for participating!<p />' +
         
-        'Please go to the following web page to verify your participation: ' +
-        '<a href="https://app.prolific.co/submissions/complete?cc=6CC6F58A" target="_blank">' +
-        'https://app.prolific.co/submissions/complete?cc=6CC6F58A' +
-        '</a>.'
+        // 'Please go to the following web page to verify your participation: ' +
+        // '<a href="https://app.prolific.co/submissions/complete?cc=6CC6F58A" target="_blank">' +
+        // 'https://app.prolific.co/submissions/complete?cc=6CC6F58A' +
+        // '</a>.'
+        'You may now close your browser window.'
     )
         .css({'margin': 'auto', 'text-align': 'center', 'width': '30em'})
         .print(),
