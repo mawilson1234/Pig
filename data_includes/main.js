@@ -91,9 +91,9 @@ newTrial("consent",
 
 newTrial("background",
     newText(
-        "Please complete this short demographic questionnaire before beginning the experiment." +
-        "Please answer the questions accurately, as they will help us interpret the results of" +
-        " the experiment."
+        "Please complete this short demographic questionnaire before beginning the experiment. " +
+        "Please answer the questions accurately, as they will help us interpret the results of " +
+        "the experiment. After you enter each answer, press Enter to show the next question."
     )
         .css(feedback_style)
         .print()
@@ -110,7 +110,7 @@ newTrial("background",
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(1)
         .print()
         .wait()
     ,
@@ -126,7 +126,7 @@ newTrial("background",
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(2)
         .print()
         .wait()
     ,
@@ -142,7 +142,7 @@ newTrial("background",
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(2)
         .print()
         .wait()
     ,
@@ -159,7 +159,7 @@ newTrial("background",
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
         .wait()
     ,
@@ -195,7 +195,7 @@ newTrial("background",
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
         .wait()
     ,
