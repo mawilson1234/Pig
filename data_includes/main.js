@@ -93,7 +93,7 @@ newTrial("background",
     newText(
         "Please complete this short demographic questionnaire before beginning the experiment. " +
         "Please answer the questions accurately, as they will help us interpret the results of " +
-        "the experiment. After you enter each answer, press Enter to show the next question."
+        "the experiment."
     )
         .css(feedback_style)
         .print()
@@ -109,10 +109,8 @@ newTrial("background",
     newTextInput('demographics_firstlanguages')
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
-        .log()
         .lines(1)
         .print()
-        .wait()
     ,
     
     newText(
@@ -125,10 +123,8 @@ newTrial("background",
     newTextInput('demographics_earlylifelocation')
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
-        .log()
         .lines(2)
         .print()
-        .wait()
     ,
     
     newText(
@@ -141,10 +137,8 @@ newTrial("background",
     newTextInput('demographics_schoollocation')
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
-        .log()
         .lines(2)
         .print()
-        .wait()
     ,
 
     newText(
@@ -158,10 +152,8 @@ newTrial("background",
     newTextInput('demographics_otherlanguages')
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
-        .log()
         .lines(5)
         .print()
-        .wait()
     ,
     
     newText(
@@ -180,7 +172,6 @@ newTrial("background",
         )
         .css(feedback_style)
         .print()
-        .wait()
     ,
     
     newText(
@@ -194,10 +185,8 @@ newTrial("background",
     newTextInput('demographics_languagedisorder')
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
-        .log()
         .lines(5)
         .print()
-        .wait()
     ,
     
     newText("<p />").center().print(),
@@ -208,7 +197,27 @@ newTrial("background",
         .disable()
     ,
     
-    getDropDown('device')
+    getTextInput('demographics_firstlanguages')
+        .wait()
+        .log()
+    ,
+    
+    getTextInput('demographics_earlylifelocation')
+        .wait()
+        .log()
+    ,
+    
+    getTextInput('demographics_otherlanguages')
+        .wait()
+        .log()
+    ,
+    
+    getDropDown('demographics_vision')
+        .wait()
+        .log()
+    ,
+    
+    getTextInput('demographics_languagedisorder')
         .wait()
         .log()
     ,
