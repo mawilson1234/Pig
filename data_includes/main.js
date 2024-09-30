@@ -90,13 +90,133 @@ newTrial("consent",
 ).setOption("countsForProgressBar", false)
 
 newTrial("background",
-    newHtml("background", "background.html")
+    newText(
+        "Please complete this short demographic questionnaire before beginning the experiment." +
+        "Please answer the questions accurately, as they will help us interpret the results of" +
+        " the experiment."
+    )
+        .css(feedback_style)
         .print()
     ,
-    newButton("Continue")
+    
+    newText(
+        "What is your first language (i.e., the language or languages you learned first)?"
+    )
+        .css(feedback_style)
         .print()
         .wait()
+    ,
+    
+    newTextInput('demographics_firstlanguages')
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
+        .log()
+        .lines(10)
+        .print()
+        .wait()
+    ,
+    
+    newText(
+        'Where (country, state) did you live when you were 2&endash;5 years of age?'
+    )
+        .css(feedback_style)
+        .print()
+    ,
+    
+    newTextInput('demographics_earlylifelocation')
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
+        .log()
+        .lines(10)
+        .print()
+        .wait()
+    ,
+    
+    newText(
+        'Where (country, state) did you attend Elementary/Junior high school?'
+    )
+        .css(feedback_style)
+        .print()
+    ,
+    
+    newTextInput('demographics_schoollocation')
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
+        .log()
+        .lines(10)
+        .print()
+        .wait()
+    ,
 
+    newText(
+        'Do you speak any other languages/dialects? If so, please list them here, along with' +
+        ' your level of proficiency in each.'
+    )
+        .css(feedback_style)
+        .print()
+    ,
+    
+    newTextInput('demographics_otherlanguages')
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
+        .log()
+        .lines(10)
+        .print()
+        .wait()
+    ,
+    
+    newText(
+        'Please select the option that best describes your vision.'
+    )
+        .css(feedback_style)
+        .print()
+    ,
+    
+    newDropDown('demographics_vision', 'Select an option')
+        .add(
+            'Normal',
+            'Normal with glasses/contacts you are currently wearing',
+            'Normal with glasses/contacts you are not wearing',
+            'Not normal or corrected to normal'
+        )
+        .css(feedback_style)
+        .print()
+        .wait()
+    ,
+    
+    newText(
+        'Do you now or have you ever suffered from or been treated for a ' +
+        'language or reading disorder? If so, please specify.'
+    )
+        .css(feedback_style)
+        .print()
+    ,
+    
+    newTextInput('demographics_languagedisorder')
+        .cssContainer('text-align', 'center')
+        .css(centered_justified_style)
+        .log()
+        .lines(10)
+        .print()
+        .wait()
+    ,
+    
+    newText("<p />").center().print(),
+    
+    newButton('Next','Next')
+        .center()
+        .print()
+        .disable()
+    ,
+    
+    getDropDown('device')
+        .wait()
+        .log()
+    ,
+    
+    getButton('Next')
+        .enable()
+        .wait()
 ).setOption("countsForProgressBar", false)
 
 var instructions = label => newTrial(label,
