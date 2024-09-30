@@ -104,7 +104,6 @@ newTrial("background",
     )
         .css(feedback_style)
         .print()
-        .wait()
     ,
     
     newTextInput('demographics_firstlanguages')
