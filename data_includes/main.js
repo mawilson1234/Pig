@@ -241,8 +241,8 @@ var practice_no_feedback_trial = label => item => {
             mode: 'speeded acceptability',
             display: 'in place',
             blankText: '+',
-            wordTime: 325,
-            wordPauseTime: 0
+            // wordTime: 325,
+            // wordPauseTime: 0
         },
         'Separator', {transfer: 1000, normalMessage: '+'},
         'PennController', PennController()
@@ -271,8 +271,8 @@ var no_feedback_trial = label => item => {
             mode: 'speeded acceptability',
             display: 'in place',
             blankText: '+',
-            wordTime: 325,
-            wordPauseTime: 0
+            // wordTime: 325,
+            // wordPauseTime: 0
         },
         'QuestionAlt', {
             q: item.question,
@@ -340,8 +340,8 @@ var feedback_trial = label => item => {
             mode: 'speeded acceptability',
             display: 'in place',
             blankText: '+',
-            wordTime: 325,
-            wordPauseTime: 0
+            // wordTime: 325,
+            // wordPauseTime: 0
         },
         'QuestionAlt', {
             q: item.question,
