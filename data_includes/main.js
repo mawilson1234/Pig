@@ -123,7 +123,7 @@ var practice_no_feedback_trial = label => item => {
             s: item.sentence, 
             mode: 'self-paced reading',
             display: 'in place',
-            blankText: '&mdash; &mdash;',
+            blankText: '— —',
             // wordTime: 325,
             // wordPauseTime: 0
         },
@@ -153,7 +153,7 @@ var no_feedback_trial = label => item => {
             s: sentence, 
             mode: 'self-paced reading',
             display: 'in place',
-            blankText: '&mdash; &mdash',
+            blankText: '— &mdash',
             // wordTime: 325,
             // wordPauseTime: 0
         },
@@ -222,7 +222,7 @@ var feedback_trial = label => item => {
             s: sentence, 
             mode: 'self-paced reading',
             display: 'in place',
-            blankText: '&mdash; &mdash;',
+            blankText: '— —',
             // wordTime: 325,
             // wordPauseTime: 0
         },
