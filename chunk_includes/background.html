@@ -23,7 +23,7 @@
 		<tr>
 			<td width="50%">What is your gender?</td>
 			<td>
-				<textarea name="Gender" class="obligatory" rows="1" type="text"></textarea>
+				<textarea name="demographics_gender" class="obligatory" rows="1" type="text"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -59,13 +59,11 @@
 		<tr>
 			<td width="50%">Please select the option that best describes your vision.</td>
 			<td width="50%">
-				<select name="demographics_vision" id="demographics_vision" class="obligatory">
-					<option selected="selected" select disabled>Select an option</option>
-					<option value="normal">Normal</option>
-					<option value="normal_glasses_wearing">Normal with glasses/contacts you are currently wearing</option>
-					<option value="normal_glasses_notwearing">Normal with glasses/contacts you are not wearing</option>
-					<option value="notnormal">Not normal nor corrected to normal</option>
-				</select>
+				<input name="demographics_vision" type="radio" id="normal" value="normal" class="obligatory"><label for="normal">Normal</label><br>
+				<input name="demographics_vision" type="radio" id="normal_glassescontacts" value="normal_glassescontacts"><label for="normal_glassescontacts">Normal with glasses/contacts you are currently wearing</label><br>
+	            <input name="demographics_vision" type="radio" id="normal_glassescontacts_notwearing" value="normal_glassescontacts_notwearing"><label for="normal_glassescontacts_notwearing">Normal with glasses/contacts you are NOT currently wearing</label><br>
+	            <input name="demographics_vision" type="radio" id="not_normal" value="not_normal"><label for="not_normal">Normal</label><br>
+				
 			</td>
 		</tr>
 		<tr>
