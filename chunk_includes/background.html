@@ -6,14 +6,6 @@
 	textarea{
 		width:100%;
 	}
-	select{
-		width: 100%;
-		min-width: 100%;
-	}
-	input{
-		width:100%;
-		min-width:100%;
-	}
 </style>
 
 <b>Please complete this short demographic questionnaire before beginning the experiment. Please answer the questions accurately, as they will help in interpreting the results of the experiment.</b>
@@ -29,7 +21,7 @@
 		<tr>
 			<td width="50%">How old are you?</td>
 			<td> 
-				<input name="Age" class="obligatory" rows="1" type="number" minlength="1" min="1" max="120" maxlength="3"></input>
+				<input name="Age" class="obligatory" rows="1" type="number" minlength="1" min="1" max="120" maxlength="3" style="width:100%; min-width: 100%"></input>
 			</td>
 		</tr>
 		<tr>
@@ -58,12 +50,11 @@
 		</tr>
 		<tr>
 			<td width="50%">Please select the option that best describes your vision.</td>
-			<td width="50%">
-				<input name="demographics_vision" type="radio" id="normal" value="normal" class="obligatory"><label for="normal">Normal</label><br>
-				<input name="demographics_vision" type="radio" id="normal_glassescontacts" value="normal_glassescontacts"><label for="normal_glassescontacts">Normal with glasses/contacts you are currently wearing</label><br>
-	            <input name="demographics_vision" type="radio" id="normal_glassescontacts_notwearing" value="normal_glassescontacts_notwearing"><label for="normal_glassescontacts_notwearing">Normal with glasses/contacts you are NOT currently wearing</label><br>
-	            <input name="demographics_vision" type="radio" id="not_normal" value="not_normal"><label for="not_normal">Normal</label><br>
-				
+			<td width="50%" style="white-space: nowrap;">
+				<input name="demographics_vision" type="radio" id="normal" value="normal" class="obligatory"><label for="normal">Normal</label><br><br>
+				<input name="demographics_vision" type="radio" id="normal_glassescontacts" value="normal_glassescontacts"><label for="normal_glassescontacts">Normal with glasses/contacts you are currently wearing</label><br><br>
+	            <input name="demographics_vision" type="radio" id="normal_glassescontacts_notwearing" value="normal_glassescontacts_notwearing"><label for="normal_glassescontacts_notwearing">Normal with glasses/contacts you are NOT currently wearing</label><br><br>
+	            <input name="demographics_vision" type="radio" id="not_normal" value="not_normal"><label for="not_normal">Not normal nor corrected to normal</label><br>
 			</td>
 		</tr>
 		<tr>
