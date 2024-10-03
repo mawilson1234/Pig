@@ -153,7 +153,7 @@ var no_feedback_trial = label => item => {
             s: sentence, 
             mode: 'self-paced reading',
             display: 'in place',
-            blankText: '— &mdash',
+            blankText: '— —',
             // wordTime: 325,
             // wordPauseTime: 0
         },
