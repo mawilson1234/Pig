@@ -73,7 +73,7 @@ Sequence(
 newTrial("consent",
     newText(
         "Before starting the experiment, you will need to give consent. " + 
-        "Please click <a href='' " +
+        "Please click <a href='https://sites.udel.edu/michaelwilson/files/2024/11/consent_form_ec.pdf' " +
         "target='_blank'>here</a> to download the consent form for this " + 
         "study. If you read it and agree to participate in this study, " +
         "click 'I Agree' below. If you do not agree to participate in " +
@@ -239,22 +239,22 @@ var feedback_trial = label => item => {
             errorMessage: 'Wrong answer. Please read slowly and carefully.'
         },
         'PennController', PennController()
-            .log('group',           d.group)
-            .log('subexperiment',   label)
-            .log('item',            item.item)
-            .log('sentence',        log_sentence)
-            .log('question',        item.question)
-            .log('left_answer',     item.left_answer)
-            .log('right_answer',    item.right_answer)
-            .log('correct_answer',  item.correct_answer)
-            .log('sentence_voice',  d.sentence_voice)
-            .log('question_voice',  d.question_voice)
-            .log('verb_type',       d.verb_type)
-            .log('verb',            d.verb)
-            .log('structure',       d.structure)
-            .log('complementizer',  d.complementizer)
+            .log('group',                   d.group)
+            .log('subexperiment',           label)
+            .log('item',                    item.item)
+            .log('sentence',                log_sentence)
+            .log('question',                item.question)
+            .log('left_answer',             item.left_answer)
+            .log('right_answer',            item.right_answer)
+            .log('correct_answer',          item.correct_answer)
+            .log('sentence_voice',          d.sentence_voice)
+            .log('question_voice',          d.question_voice)
+            .log('verb_type',               d.verb_type)
+            .log('verb',                    d.verb)
+            .log('structure',               d.structure)
+            .log('complementizer',          d.complementizer)
             .log('indirect_object_animacy', d.indirect_object_animacy)
-            .log('adverb_position', d.adverb_position)
+            .log('adverb_position',         d.adverb_position)
     ]
 }
 
@@ -409,7 +409,10 @@ newTrial('feedback',
         .print()
     ,
     
-    newText("<p />").center().print(),
+    newText("<p />")
+        .center()
+        .print()
+    ,
     
     newButton('Next','Next')
         .center()
@@ -440,6 +443,7 @@ newTrial('bye',
         .css({'margin': 'auto', 'text-align': 'center', 'width': '30em'})
         .print(),
         
-    newButton().wait()
+    newButton()
+        .wait()
 )
 .setOption('countsForProgressBar' , false)
