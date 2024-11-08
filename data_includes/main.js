@@ -320,7 +320,7 @@ newTrial('feedback',
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
     ,
     
@@ -335,7 +335,7 @@ newTrial('feedback',
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
     ,
     
@@ -352,7 +352,7 @@ newTrial('feedback',
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
     ,
 
@@ -368,7 +368,7 @@ newTrial('feedback',
         .cssContainer('text-align', 'center')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
     ,
     
@@ -386,7 +386,7 @@ newTrial('feedback',
     newTextInput('feedback_bot')
         .css(centered_justified_style)
         .log()
-        .lines(10)
+        .lines(5)
         .print()
     ,
     
@@ -441,7 +441,8 @@ newTrial('bye',
         'You may now close your browser window.'
     )
         .css({'margin': 'auto', 'text-align': 'center', 'width': '30em'})
-        .print(),
+        .print()
+    ,
         
     newButton()
         .wait()
