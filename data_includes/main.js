@@ -442,7 +442,7 @@ newTrial('bye',
         'we may not be able to award you extra credit.</b><p />' +
         
         'Once you have visited the web page above and answered the questions, ' +
-        'you close this browser window or tab. Thank you again!'
+        'you may close this browser window or tab. Thank you again!'
     )
         .css(centered_justified_style)
         .print()
