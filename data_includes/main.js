@@ -434,11 +434,15 @@ newTrial('bye',
     newText(
         'Thank you for participating!<p />' +
         
-        // 'Please go to the following web page to verify your participation: ' +
-        // '<a href="https://app.prolific.co/submissions/complete?cc=6CC6F58A" target="_blank">' +
-        // 'https://app.prolific.co/submissions/complete?cc=6CC6F58A' +
-        // '</a>.'
-        'You may now close your browser window.'
+        'To receive extra credit, please go to the following web page to ' +
+        ' verify your participation: ' +
+        '<a href="https://farm.pcibex.net/p/gjbySu/" target="_blank">' +
+        'https://farm.pcibex.net/p/gjbySu/' +
+        '</a>. <b>If you do not visit this web page and answer the questions, ' +
+        'we may not be able to award you extra credit.</b>'
+        
+        'Once you have visited the web page above and answered the questions, ' +
+        'you close this browser window or tab. Thank you again!'
     )
         .css({'margin': 'auto', 'text-align': 'center', 'width': '30em'})
         .print()
