@@ -439,12 +439,12 @@ newTrial('bye',
         '<a href="https://farm.pcibex.net/p/gjbySu/" target="_blank">' +
         'https://farm.pcibex.net/p/gjbySu/' +
         '</a>. <b>If you do not visit this web page and answer the questions, ' +
-        'we may not be able to award you extra credit.</b>'
+        'we may not be able to award you extra credit.</b><p />' +
         
         'Once you have visited the web page above and answered the questions, ' +
         'you close this browser window or tab. Thank you again!'
     )
-        .css({'margin': 'auto', 'text-align': 'center', 'width': '30em'})
+        .css(centered_justified_style)
         .print()
     ,
         
