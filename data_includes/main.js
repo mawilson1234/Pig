@@ -74,8 +74,9 @@ newTrial("consent",
     newText(
         "Before starting the experiment, you will need to give consent. " + 
         "Please click <a href='https://sites.udel.edu/michaelwilson/files/2024/11/consent_form_ec.pdf' " +
-        "target='_blank'>here</a> to download the consent form for this " + 
-        "study. If you read it and agree to participate in this study, " +
+        "target='_blank'>here</a> and <a href='https://sites.udel.edu/michaelwilson/files/2024/11/" +
+        "online_consent_SONA.pdf' target='_blank'>here</a> to download the consent forms for this " + 
+        "study. If you read them and agree to participate in this study, " +
         "click 'I Agree' below. If you do not agree to participate in " +
         "this study, you can leave this page by closing the tab or window."
     )
